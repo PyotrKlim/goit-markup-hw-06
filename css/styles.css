@@ -786,8 +786,8 @@ header {
 }
 
 .place {
-  position: relative;
-  display: block;
+  /* position: relative; */
+  /* display: block; */
 
   margin-bottom: 10px;
 
@@ -800,6 +800,13 @@ header {
 
 .place-title {
   margin-bottom: 4px;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .place-last {
@@ -817,21 +824,20 @@ header {
   padding-left: 42px;
 }
 
-.form-input:focus ~ .modal-icon {
+.modal-icon {
+  position: absolute;
+  fill: var(--basic-color);
+  left: 12px;
 }
 
-.place:hover .form-date,
-.place:hover .modal-icon,
-.place:hover .place-comment {
+.input-container:hover .form-date,
+.input-container:hover .modal-icon,
+.form-date:focus,
+.form-date:focus + .modal-icon {
   border-color: var(--accent-color);
   cursor: pointer;
   fill: var(--accent-color);
-}
-
-.modal-icon {
-  position: absolute;
-  bottom: 11px;
-  left: 12px;
+  outline: none;
 }
 
 .place-comment {
@@ -844,6 +850,13 @@ header {
   border-radius: 4px;
 
   padding: 12px 16px;
+}
+
+.place-comment:hover,
+.place-comment:focus {
+  border-color: var(--accent-color);
+  cursor: pointer;
+  outline: none;
 }
 
 /* чекбокс */
@@ -862,6 +875,15 @@ header {
   fill: var(--main-color);
   border-radius: 2px;
   border: var(--basic-color) solid 2px;
+}
+
+.icon-check:hover {
+  border-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.checkbox:focus + .icon-check {
+  border-color: var(--accent-color);
 }
 
 .checkbox:checked + .icon-check {
